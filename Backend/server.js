@@ -1,8 +1,8 @@
 const express = require('express');
-const connection = require('./db');  // Import the database connection
+const connection = require('./db');  
 
 const app = express();
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.json()); 
 
 // Route to add a food item
 app.post('/food', (req, res) => {
@@ -29,8 +29,8 @@ app.get('/food', (req, res) => {
 
 // Route to update a food item by ID
 app.put('/food/:id', (req, res) => {
-    const { id } = req.params; // Get the ID from the request parameters
-    const { name, expiration_date } = req.body; // Get the updated data from the request body
+    const { id } = req.params; 
+    const { name, expiration_date } = req.body; 
 
     // Validate that both name and expiration_date are provided
     if (!name || !expiration_date) {
